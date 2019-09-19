@@ -1,0 +1,23 @@
+{
+  "name": "express_static-vs-nodejs",
+  "version": "1.0.0",
+  "description": "test ",
+  "main": "index.js",
+  "dependencies": {
+    "serve-static": "1.14.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MoksS/server_static-vs-nodejs.git"
+  },
+  "author": "MoksS <skarobogyodko@gmail.com> (https://github.com/MoksS)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MoksS/server_static-vs-nodejs/issues"
+  },
+  "homepage": "https://github.com/MoksS/server_static-vs-nodejs#readme"
+}
