@@ -1,7 +1,11 @@
-# Install
+## Install
 
 `npm install`
 
-# Start
+## Start
 
 `npm start`
+
+# License (underscope)
+
+(The MIT License)
