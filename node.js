@@ -25,13 +25,16 @@ const serveFile = name => {
   return stream;
 };
 
-http.createServer((req, res) => {
+const server = http.createServer((req, res) => {
   const { url } = req;
   const name = url === "/" ? "/index.html" : url;
   const fileExt = path.extname(name).substring(1);
   const mimeType = MIME_TYPES[fileExt] || MIME_TYPES.html;
-  res.writeHead(200, { "Content-Type": mimeType });
+  res.writeHead(200, { "Content-Type": mimeType, "Cache-Control" : "public, max-age=0" });
   const stream = serveFile(name);
   if (stream) stream.pipe(res);
-}).listen(8000);
+}).listen(8000, (err) => {
+    if(err) return console.log(err);
+    console.log(`PURE NODEJS \nserver is listening on ${server.address().port}`);
+});
 

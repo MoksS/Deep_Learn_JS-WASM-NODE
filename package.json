@@ -3,12 +3,16 @@
   "version": "1.0.0",
   "description": "test ",
   "main": "index.js",
-  "dependencies": {},
+  "dependencies": {
+    "concurrently": "4.1.2"
+  },
   "devDependencies": {
+    "autocannon": "4.1.1",
     "express": "4.17.1"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "concurrently \"node node.js\" \"node express.js\" \"npm run test\"",
+    "test": "autocannon -c 400 -d 5 -p 10 http://localhost:3000/ && autocannon -c 400 -d 5 -p 10 http://localhost:8000/"
   },
   "repository": {
     "type": "git",
