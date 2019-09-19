@@ -6,6 +6,6 @@
 
 `npm start`
 
-# License (underscope)
+# License
 
 (The MIT License)
