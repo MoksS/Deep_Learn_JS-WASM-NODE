@@ -1,0 +1,25 @@
+{
+  "name": "deep_learn_js-wasm-node",
+  "version": "1.0.0",
+  "description": "\"/\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MoksS/Deep_Learn_JS-WASM-NODE.git"
+  },
+  "author": "MoksS <skarobogyodko@gmail.com> (https://github.com/MoksS)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MoksS/Deep_Learn_JS-WASM-NODE/issues"
+  },
+  "homepage": "https://github.com/MoksS/Deep_Learn_JS-WASM-NODE#readme",
+  "eslint": "6.5.1",
+  "eslint-config-airbnb-base": "14.0.0",
+  "eslint-config-prettier": "6.4.0",
+  "eslint-plugin-import": "2.18.2",
+  "eslint-plugin-prettier": "3.1.1",
+  "prettier": "1.18.2"
+}
