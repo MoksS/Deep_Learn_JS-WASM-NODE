@@ -30,9 +30,9 @@
             };
             
             const binarynumber = difColor.r + difColor.g + difColor.b;
-            const color = parseInt(binarynumber, 2) ^ key.charCodeAt(i++);
+            const color = (parseInt(binarynumber, 2) ^ key.charCodeAt(i++)) > 0 ? 255 : 0;
             if (i === key.length) i = 0;
-            putPixelToSolution({r: color, g:color, b:color}, x, y);
+            putPixelToSolution({r:color, g:color, b:color}, x, y);
           }
         }
       });
