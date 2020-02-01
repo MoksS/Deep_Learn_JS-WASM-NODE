@@ -1,15 +1,14 @@
+import http2 from "http2";
+import fs from "fs";
+import mime from "mime";
+import path from "path";
+
+const dirname = path.resolve();
 const HTTP2_PORT = 443;
-
-const fs = require("fs");
-const mime = require("mime");
-const path = require("path");
-
 const serverOptions = {
-  key: fs.readFileSync(`${__dirname}/secret/key.pem`),
-  cert: fs.readFileSync(`${__dirname}/secret/cert.pem`)
+  key: fs.readFileSync(`${dirname}/secret/key.pem`),
+  cert: fs.readFileSync(`${dirname}/secret/cert.pem`)
 };
-
-const http2 = require("http2");
 
 // read and send file content in the stream
 const sendFile = (stream, fileName) => {
@@ -45,17 +44,17 @@ const http2Handlers = (req, res) => {
     pushFile(res.stream, "/style.css", "style.css");
 
     // push all files in scripts directory
-    const files = fs.readdirSync(`${__dirname}/scripts`);
+    const files = fs.readdirSync(`${dirname}/scripts`);
     for (let i = 0; i < files.length; i++) {
-      const fileName = `${__dirname}/scripts/${files[i]}`;
+      const fileName = `${dirname}/scripts/${files[i]}`;
       const path = `/scripts/${files[i]}`;
       pushFile(res.stream, path, fileName);
     }
 
     // push all files in images directory
-    const imageFiles = fs.readdirSync(`${__dirname}/images`);
+    const imageFiles = fs.readdirSync(`${dirname}/images`);
     for (let i = 0; i < imageFiles.length; i++) {
-      const fileName = `${__dirname}/images/${imageFiles[i]}`;
+      const fileName = `${dirname}/images/${imageFiles[i]}`;
       const path = `/images/${imageFiles[i]}`;
       pushFile(res.stream, path, fileName);
     }
@@ -69,7 +68,7 @@ const http2Handlers = (req, res) => {
       res.stream.end();
       return;
     }
-    const fileName = path.join(__dirname, req.url);
+    const fileName = path.join(dirname, req.url);
     sendFile(res.stream, fileName);
   }
 };
