@@ -44,7 +44,8 @@
       "no-shadow":"off",
       "no-continue":"off",
       "no-prototype-builtins":"off",
-      "no-undef":"off"
+      "no-undef":"off",
+      "no-new":"off"
   },
   "globals": {
       "Atomics": true,
